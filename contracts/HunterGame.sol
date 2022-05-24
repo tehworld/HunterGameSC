@@ -46,6 +46,8 @@ contract HunterGame is ERC721, Ownable, IERC2981Royalties {
 
     string public baseTokenURI;
 
+    event NFTMinted(uint256, uint256, address);
+
     //amount of mints that each address has executed
     mapping(address => uint256) public mintsPerAddress;
 
@@ -95,6 +97,8 @@ contract HunterGame is ERC721, Ownable, IERC2981Royalties {
         for (uint i = 0; i < _number; i++) {
             _mintSingleNFT();
         }
+
+        emit NFTMinted(_number, _tokenIds.current(), msg.sender);
     }
 
 
@@ -108,6 +112,7 @@ contract HunterGame is ERC721, Ownable, IERC2981Royalties {
     function getCurrentId() public view returns (uint256) {
         return _tokenIds.current();
     }
+
 
 
 //Withdraw money in contract to Owner

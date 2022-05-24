@@ -43,9 +43,9 @@ npx hardhat test test/test.js
 
 ## Veryfy contract 
 ```bash
-npx hardhat verify --network rinkeby ADDRESSOFTHECONTRACT
+npx hardhat verify --network rinkeby 0x303DFb2DFBE7d10eF218B8d28d5F69b8f693d49A
 ```
 
 ##Current contract address
-Rinkeby testnet =
+Rinkeby testnet = 0x303DFb2DFBE7d10eF218B8d28d5F69b8f693d49A
 
