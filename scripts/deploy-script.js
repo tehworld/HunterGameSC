@@ -7,7 +7,7 @@ async function main() {
 //run with this for mainnet: npx hardhat run scripts/deploy-script.js --network mainnet
 
 // We get the contract to deploy
-  let deployment_base_uri = "ipfs://QmUCSovMHdNbENRabqW8cfq6f3DhEpMGqjox68cpWTfgrQ/"
+  let deployment_base_uri = "ipfs://Qmd1ZtfXb6C6kC8MKAUaDqG5RhswBriuvnH2y5Nz9rPtuG/"
 
   const HunterGameContract = await hre.ethers.getContractFactory("HunterGame");
   const HunterGame = await HunterGameContract.deploy(deployment_base_uri);
@@ -15,11 +15,11 @@ async function main() {
   await HunterGame.deployed();
 
   console.log("HunterGame deployed to:", HunterGame.address);
-  console.log(`See collection in Rarible:  https://rinkeby.rarible.com/token/${HunterGame.address}`)
-  console.log(`See collection in Opensea: https://testnets.opensea.io/${HunterGame.address}`)
+  //console.log(`See collection in Opensea: https://testnets.opensea.io/${HunterGame.address}`)
+  console.log(`See collection in Opensea: https://opensea.io/${HunterGame.address}`)
 
   await HunterGame.openPublicSale()
-  await HunterGame.mintNFTs(1, {value: ethers.utils.parseEther("0.1")});
+ // await HunterGame.mintNFTs(1, {value: ethers.utils.parseEther("0.1")});
   await HunterGame.transferOwnership("0xf9B763867485304056677A8a9016c06E28bDe219")
 
   
