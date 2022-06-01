@@ -3,7 +3,7 @@ require('dotenv').config()
 require("@nomiclabs/hardhat-etherscan");
 require("hardhat-gas-reporter");
 
-
+//DEVELOPMENT ADDRESS = 0xfeB31F196D4d9115642c505C6efe95be0b75B664
 module.exports = {
   solidity: {
     version: "0.8.7",
@@ -20,10 +20,10 @@ module.exports = {
       accounts: [process.env.PRIVATE_KEY_DEVELOPMENT],
     },
 
-    // mainnet:{
-    //   url: process.env.PRODUCTION_ALCHEMY_KEY,
-    //   accounts: [process.env.PRIVATE_KEY_PRODUCTION],
-    // }
+    mainnet:{
+      url: process.env.PRODUCTION_ALCHEMY_KEY,
+      accounts: [process.env.PRIVATE_KEY_DEVELOPMENT],
+    }
   },
   etherscan: {
         // Your API key for Etherscan
