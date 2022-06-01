@@ -7,8 +7,8 @@ async function main() {
 //run with this for mainnet: npx hardhat run scripts/deploy-script.js --network mainnet
 
 // We get the contract to deploy
-  let deployment_base_uri = "ipfs://Qmd1ZtfXb6C6kC8MKAUaDqG5RhswBriuvnH2y5Nz9rPtuG/"
-
+  let deployment_base_uri = "ipfs://QmPfirERYYJQbCYkijadgpZTR8oSbQAVfZ6ZkMYRkdfoKs/"
+  //let revealed_uri: = "ipfs://QmT2pB9EPrqQhhQYQxyHQwrsXAD6ZCj1DGn62HFKPiKddc/"
   const HunterGameContract = await hre.ethers.getContractFactory("HunterGame");
   const HunterGame = await HunterGameContract.deploy(deployment_base_uri);
 
@@ -20,7 +20,7 @@ async function main() {
 
   await HunterGame.openPublicSale()
  // await HunterGame.mintNFTs(1, {value: ethers.utils.parseEther("0.1")});
-  await HunterGame.transferOwnership("0xf9B763867485304056677A8a9016c06E28bDe219")
+  //await HunterGame.transferOwnership("0xf9B763867485304056677A8a9016c06E28bDe219")
 
   
  

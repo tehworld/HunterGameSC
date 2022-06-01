@@ -14,7 +14,7 @@ contract HunterGame is ERC721, Ownable, IERC2981Royalties {
 
     struct RoyaltyInfo {
         address recipient;
-        uint24 amount;
+        uint256 amount;
     }
     
     RoyaltyInfo private _royalties;
@@ -27,7 +27,7 @@ contract HunterGame is ERC721, Ownable, IERC2981Royalties {
     bool private publicSaleIsOpen = false;
 
     //comparisons are strictly less than
-    uint256 public constant MAX_SUPPLY = 10001;
+    uint256 public constant MAX_SUPPLY = 10000;
 
     //Phase1
     uint256 public constant PRICE_BATCH_1 = 0.1 ether;
@@ -37,7 +37,7 @@ contract HunterGame is ERC721, Ownable, IERC2981Royalties {
     uint256 public constant MAX_TOKENS_BATCH_2 = 9000;
     //Phase3
     uint256 public constant PRICE_BATCH_3 = 0.3 ether;
-    uint256 public constant MAX_TOKENS_BATCH_3 = 10001;
+    uint256 public constant MAX_TOKENS_BATCH_3 = 10000;
 
     uint256 public constant MAX_PER_MINT = 6;
     uint256 public constant MAX_PER_WALLET = 6;
@@ -133,7 +133,7 @@ contract HunterGame is ERC721, Ownable, IERC2981Royalties {
     function setRoyalties(address recipient, uint256 value) public onlyOwner {
         require(value <= 10000, 'ERC2981Royalties: Too high');
 
-        _royalties = RoyaltyInfo(recipient, uint24(value));
+        _royalties = RoyaltyInfo(recipient, value);
     }
 
     function royaltyInfo(uint256, uint256 value) external view override returns (address receiver, uint256 royaltyAmount)

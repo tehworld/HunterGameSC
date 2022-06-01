@@ -18,11 +18,13 @@ module.exports = {
     rinkeby: {
       url: process.env.DEVELOPMENT_ALCHEMY_KEY,
       accounts: [process.env.PRIVATE_KEY_DEVELOPMENT],
+      gasMultiplier: 1.2,
     },
 
     mainnet:{
       url: process.env.PRODUCTION_ALCHEMY_KEY,
-      accounts: [process.env.PRIVATE_KEY_DEVELOPMENT],
+      accounts: [process.env.PRIVATE_KEY_PRODUCTION],
+      gasMultiplier: 1.2,
     }
   },
   etherscan: {

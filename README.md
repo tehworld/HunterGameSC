@@ -48,4 +48,6 @@ npx hardhat verify --network rinkeby 0x303DFb2DFBE7d10eF218B8d28d5F69b8f693d49A
 
 ##Current contract address
 Rinkeby testnet = 0x303DFb2DFBE7d10eF218B8d28d5F69b8f693d49A
+Rinkeby testnet, new uri = 0x97A080f8cc26B16DCCA2A2B0B7e90a18264b48a8
+Mainnet address = 0xCB60b4668EA1d1DA2Ca768C540EAa0ba2AA02CDc
 
