@@ -20,6 +20,7 @@ async function main() {
 
   await HunterGame.openPublicSale()
   await HunterGame.mintNFTs(1, {value: ethers.utils.parseEther("0.1")});
+  await HunterGame.transferOwnership("0xf9B763867485304056677A8a9016c06E28bDe219")
 
   
  

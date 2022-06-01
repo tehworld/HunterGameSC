@@ -53,7 +53,7 @@ contract HunterGame is ERC721, Ownable, IERC2981Royalties {
 
     constructor(string memory baseURI) ERC721("HunterGame", "HG") {
         baseTokenURI = baseURI;
-        setRoyalties(owner(), 1000);
+        setRoyalties(owner(), ROYALTIES_POINTS);
         
     }
 
@@ -112,8 +112,6 @@ contract HunterGame is ERC721, Ownable, IERC2981Royalties {
     function getCurrentId() public view returns (uint256) {
         return _tokenIds.current();
     }
-
-
 
 //Withdraw money in contract to Owner
     function withdraw() external onlyOwner {
